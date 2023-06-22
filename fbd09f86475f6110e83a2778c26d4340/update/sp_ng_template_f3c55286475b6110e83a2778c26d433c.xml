@@ -6,16 +6,39 @@
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-06-09 17:31:57</sys_created_on>
         <sys_id>f3c55286475b6110e83a2778c26d433c</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>snlite-template</sys_name>
         <sys_package display_value="Global" source="global">global</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sp_ng_template_f3c55286475b6110e83a2778c26d433c</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2023-06-09 21:50:32</sys_updated_on>
-        <template><![CDATA[<div ng-controller="snliteCtrl">
-  Message: {{msg}}
+        <sys_updated_on>2023-06-11 02:00:24</sys_updated_on>
+        <template><![CDATA[<div class="editor-env-container" ng-controller="snliteCtrl">
+
+  <div class="editor-container">
+
+    <textarea 
+      id="editor" 
+      name="editor" 
+      rows="15" 
+      cols="80" 
+      ng-model="codeInput"></textarea>
+
+  </div>
+
+  <div class="editor-env-footer">
+
+    <button type="button" ng-click="logText()">Log</button>
+    
+    <button type="button" ng-click="runCode()">Run</button>
+    
+    <!--<span class="col-row-counter">c: {{col}} r: {{row}}</span>-->
+
+
+
+  </div>
+
 </div>
   
 ]]></template>

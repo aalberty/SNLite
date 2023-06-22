@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
-        <client_script><![CDATA[ScriptLoader.getScripts(["snliteController.jsdbx"], function () {
-	//var angularAppObj = snliteController.initController();
+        <client_script><![CDATA[function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Append random int to make sure file is reloaded each time, 
+// otherwise caching interferes.
+// TODO: remove after dev work
+ScriptLoader.getScripts(["snliteController.jsdbx?" + getRandomInt(100000)], function () {
 	var ga = new  GlideAjax("SNLiteTemplateAJAX");
 	ga.addParam("sysparm_name", "getTemplate");
 	ga.getXMLAnswer(appendAngularAppToDoc);
@@ -19,12 +25,25 @@
         <endpoint/>
         <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate>
+		var css = new GlideRecord("sp_css");
+		css.addEncodedQuery("name=snlite-css");
+		css.query();
+		if (css.next()) {
+			var styleStr = css.getValue("css");
+		}
+	</g:evaluate>
 	
-	
+	<style>
+		${styleStr}
+	</style>
 	
 	<html lang="en">
 		<head>
 			<g:requires name="angular_1.5.11/angular.js"/>
+			
+			
+			
 		</head>
 		
 		<body>
@@ -40,14 +59,14 @@
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-06-09 19:13:44</sys_created_on>
         <sys_id>671d66ce479b6110e83a2778c26d43ea</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>snlite</sys_name>
         <sys_package display_value="Global" source="global">global</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sys_ui_page_671d66ce479b6110e83a2778c26d43ea</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2023-06-09 21:50:15</sys_updated_on>
+        <sys_updated_on>2023-06-11 00:52:11</sys_updated_on>
     </sys_ui_page>
     <sys_claim action="INSERT_OR_UPDATE">
         <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>

@@ -8,6 +8,7 @@
         <script><![CDATA[(function () {
 	document.addEventListener('keydown', function (event) {
 		if (event.ctrlKey && event.key === "\\") {
+			//popBGSModal();
 			popSNLiteModal();
 		}
 	});
@@ -18,20 +19,26 @@ function popSNLiteModal () {
 	modal.setTitle('SNLite');
 	modal.render();
 }
-]]></script>
+
+function popBGSModal () {
+	var modal = new GlideModal("sys.scripts");
+	modal.render();
+}
+
+//https://snhackery.com/2019/11/07/portal-widgets-on-ui-pages-revisited/]]></script>
         <script_name/>
         <sys_class_name>sys_ui_script</sys_class_name>
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-06-08 21:13:46</sys_created_on>
         <sys_id>99feb9f947972110e83a2778c26d435b</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>snlite</sys_name>
         <sys_package display_value="Global" source="global">global</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sys_ui_script_99feb9f947972110e83a2778c26d435b</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2023-06-09 21:51:26</sys_updated_on>
+        <sys_updated_on>2023-06-22 19:51:42</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>

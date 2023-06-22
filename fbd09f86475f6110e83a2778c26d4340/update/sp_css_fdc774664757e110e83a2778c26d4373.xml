@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>.modal-dialog {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+}
+
+.modal-content {
+    min-width: 50vw;
+}
+
+#snlite-container {
+    min-width: 90%;
+}
+
+.editor-container {
+    display: flex;
+    padding: 0 3vw;
+}
+
+textarea#editor {
+    margin: auto;
+    height: 30vh;
+    width: 100%;
+    resize: none;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.editor-env-footer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1vh;
+}
+
+.col-row-counter {
+    margin: auto 5vw auto auto;
+}</css>
+        <name>snlite-css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-10 23:58:03</sys_created_on>
+        <sys_id>fdc774664757e110e83a2778c26d4373</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>snlite-css</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_css_fdc774664757e110e83a2778c26d4373</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 02:00:50</sys_updated_on>
+    </sp_css>
+</record_update>
