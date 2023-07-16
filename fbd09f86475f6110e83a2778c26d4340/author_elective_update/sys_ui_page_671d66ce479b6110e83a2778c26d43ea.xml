@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="DELETE">
+        <category>general</category>
+        <client_script><![CDATA[function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Append random int to make sure file is reloaded each time, 
+// otherwise caching interferes.
+// TODO: remove after dev work
+ScriptLoader.getScripts(["snliteController.jsdbx?" + getRandomInt(100000)], function () {
+	var ga = new  GlideAjax("SNLiteTemplateAJAX");
+	ga.addParam("sysparm_name", "getTemplate");
+	ga.getXMLAnswer(appendAngularAppToDoc);
+
+	function appendAngularAppToDoc (template) {
+		var container = angular.element("#snlite-container");
+		var app = angular.element(template);
+		angular.bootstrap(app, ['snlite']);
+		container.append(app);
+	}
+});]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint/>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate>
+		var css = new GlideRecord("sp_css");
+		css.addEncodedQuery("name=snlite-css");
+		css.query();
+		if (css.next()) {
+			var styleStr = css.getValue("css");
+		}
+	</g:evaluate>
+	
+	<style>
+		${styleStr}
+	</style>
+	
+	<html lang="en">
+		<head>
+			<g:requires name="angular_1.5.11/angular.js"/>
+			
+			
+			
+		</head>
+		
+		<body>
+			<div id="snlite-container"></div>
+		</body>
+	</html>
+	
+	
+</j:jelly>]]></html>
+        <name>snlite</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 19:13:44</sys_created_on>
+        <sys_id>671d66ce479b6110e83a2778c26d43ea</sys_id>
+        <sys_mod_count>76</sys_mod_count>
+        <sys_name>snlite</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sys_ui_page_671d66ce479b6110e83a2778c26d43ea</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 00:52:11</sys_updated_on>
+    </sys_ui_page>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>
+        <claim_timestamp>188a2237e360000001</claim_timestamp>
+        <metadata_update_name>sys_ui_page_671d66ce479b6110e83a2778c26d43ea</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>SNLite</previous_claim_name>
+        <previous_claim_scope>fbd09f86475f6110e83a2778c26d4340</previous_claim_scope>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 21:50:15</sys_created_on>
+        <sys_id>a9f0db86475f6110e83a2778c26d4308</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-09 21:50:15</sys_updated_on>
+    </sys_claim>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sys_ui_page_671d66ce479b6110e83a2778c26d43ea</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;
+    &lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;general&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Append random int to make sure file is reloaded each time, 
+// otherwise caching interferes.
+// TODO: remove after dev work
+ScriptLoader.getScripts(["snliteController.jsdbx?" + getRandomInt(100000)], function () {
+	var ga = new  GlideAjax("SNLiteTemplateAJAX");
+	ga.addParam("sysparm_name", "getTemplate");
+	ga.getXMLAnswer(appendAngularAppToDoc);
+
+	function appendAngularAppToDoc (template) {
+		var container = angular.element("#snlite-container");
+		var app = angular.element(template);
+		angular.bootstrap(app, ['snlite']);
+		container.append(app);
+	}
+});]]&gt;&lt;/client_script&gt;
+        &lt;description/&gt;
+        &lt;direct&gt;false&lt;/direct&gt;
+        &lt;endpoint/&gt;
+        &lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+	&lt;g:evaluate&gt;
+		var css = new GlideRecord("sp_css");
+		css.addEncodedQuery("name=snlite-css");
+		css.query();
+		if (css.next()) {
+			var styleStr = css.getValue("css");
+		}
+	&lt;/g:evaluate&gt;
+	
+	&lt;style&gt;
+		${styleStr}
+	&lt;/style&gt;
+	
+	&lt;html lang="en"&gt;
+		&lt;head&gt;
+			&lt;g:requires name="angular_1.5.11/angular.js"/&gt;
+			
+			
+			
+		&lt;/head&gt;
+		
+		&lt;body&gt;
+			&lt;div id="snlite-container"&gt;&lt;/div&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+	
+	
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;
+        &lt;name&gt;snlite&lt;/name&gt;
+        &lt;processing_script/&gt;
+        &lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 19:13:44&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;671d66ce479b6110e83a2778c26d43ea&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;76&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;snlite&lt;/sys_name&gt;
+        &lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_ui_page_671d66ce479b6110e83a2778c26d43ea&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-11 00:52:11&lt;/sys_updated_on&gt;
+    &lt;/sys_ui_page&gt;
+    &lt;sys_claim action="INSERT_OR_UPDATE"&gt;
+        &lt;claim_owner_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/claim_owner_scope&gt;
+        &lt;claim_timestamp&gt;188a2237e360000001&lt;/claim_timestamp&gt;
+        &lt;metadata_update_name&gt;sys_ui_page_671d66ce479b6110e83a2778c26d43ea&lt;/metadata_update_name&gt;
+        &lt;previous_claim_app_version&gt;1.0.0&lt;/previous_claim_app_version&gt;
+        &lt;previous_claim_name&gt;SNLite&lt;/previous_claim_name&gt;
+        &lt;previous_claim_scope&gt;fbd09f86475f6110e83a2778c26d4340&lt;/previous_claim_scope&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 21:50:15&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;a9f0db86475f6110e83a2778c26d4308&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-09 21:50:15&lt;/sys_updated_on&gt;
+    &lt;/sys_claim&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-1457059935</payload_hash>
+        <record_name>snlite</record_name>
+        <reverted_from/>
+        <source>770a618647003110e83a2778c26d43dc</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:07:48</sys_created_on>
+        <sys_id>681aa18647003110e83a2778c26d43d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1896087efae0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:07:48</sys_updated_on>
+        <type>UI Page</type>
+        <update_guid>a41aa186c00031104305d568678e85d4</update_guid>
+        <update_guid_history>a41aa186c00031104305d568678e85d4:0,60dcf9ea54232110303a96f7f1714478:-1353189903,143441ee7b57e11071c2db23a2d66274:1627481573,aa2481e29097e1103cd69d0e99278287:1554233117,fde385a21797e110b222a3124b3c351e:1814539601,214345a29197e110f8edc3fb94cc6dcd:-2125417965,419eb8ea3357e110555744af8625d073:414181294,6d1ef4ea6057e11070cc3c0af56b57bd:-1298483713,63ac7caa3757e110c87158dfb5350bb1:-315929910,c29c386ac457e1102b68d91f0b17cf26:-1850061297,bbfb306a5357e1101e863ca243ec7b46:765826652,ecbbf86ab857e1103fd4a0fb768b4846:-794216770,599b786a7757e110138cf5ae2b0d7c3d:-1939966513,248bf46a4257e1103d41a14209fa3be0:1517579103,4d7b306aea57e110e16c4a8c5bb2aa91:-1772678632,7e4bbce67357e110929a5536fc68f898:1321436005,b21b306abf57e11086499609c78f6010:216827580,ebeaf8e6b357e1101894179830f53558:-1514661651,e3daf82aef57e110ec2778df40400b95:208473608,a21ab4e63257e110f3c0359e33cdb83f:-1498803827,57e9f4e62c57e1101b59b2571b30ad1a:-743344027,c648f066b357e1106c1a5debc1f46d20:756101339,61f0db86c75f61107fa824d1f517ec0b:-923203533,c50f43063d5f6110de6261ddabdec02a:-1885259824,ec0dc382955f61104e36d37f504fac07:-2020592487,138ccb42a05f61102b8c18726db853f1:-1724960403,b22c8b42735f61106d760261a7efe405:793464845,b51ccb02bf5f611013e273a17dd4f8eb:-1724960403,d8eb4f02825f61107f6abc624859c4e3:793464845,92ab4702995f6110e78b1bf9256b7682:-512267928,948b4f02835f6110c3ffbea989d787bb:-598304206,d8eac7ce551f6110442b968cdef2826f:-573292053,34ca0b4ea21f6110f20a18703cea7e9b:-598304206,818ac7ce6e1f61109bca98b7b96ce8df:-573292053,b26ac7cece1f611035de7085c65c4c6c:2060074657,e9e9c78ee61f61104375d5ad7ce28f34:-588600397,af498b4e5f1f6110cc377ef589149167:1758386989,a029834e7d1f61104dd987cf5e01cca3:-1311630007,d8e80b4e3e1f61106f2755dac684cc95:2069622047,1e27c7cabc1f6110d8f5ebbe918af354:-878271757,e517cbca4a1f6110406ec29db3e52fb8:-2018594750,72e6c7cad61f6110bb2fea9f3eebe14f:-1387016204,18560b8a101f6110505cf14e6d94ba66:-528117402,acf583c6131f611039d7a489f157a8f7:-1387016204,11b50b4afa1f6110e0caed3abee53d25:-9910814,75a5c782051f611061d6443959896479:-116142160,08150b4a2e1f61107989fa49f2441c1a:-180537890,28d34746681f61102e20f5d21b0a345f:605318682,9bb34b82be1f61106ca4cd60c9720906:856961110,e9428b82401f611072321c5f1de3c6ba:-1361632747,c1e10b06621f6110a2a7f0988e2e019c:618819412,77410b06fe1f6110813847941086a997:-1351858456,be2147463a1f61102e23882cbf085d59:36875855,e5904782f11f6110e2d1a59cb3def2a9:1027340678,133f7e82a31f6110cb93295968b9681c:-1825721374,803f7e82911f6110c6694c7b6c26ec17:-465967183,35cdf642461f6110fa837c846dd4f2d9:970245930,ce4d3602d61f6110ee87205daeb4edd5:1362053571,c03d36caeedb6110e7cb95061de3fd2e:1458076746,290dba02b41f6110b6c49527a910ce57:862383256,e5ec3a02261f6110c4e03510b4c97e34:-584100963,263bb2ca68db6110a8977ca140e1bcf8:771956769,cbda7e4e2cdb6110a397907da1c97ee3:-1582114602,a5f9364a08db61109f5acff4e5e0f477:702528043,0ac9f2ca40db61103268d155b94679ab:-1579768332,de58b6caaddb6110058b97312143a220:-102875194,ca08360a5fdb611034192bb39faf0b6e:526890714,6c08b64af6db6110770a29953e3b0574:-102875194,26f7b2cad2db6110e585a4bff73dc6e2:-757505762,b1f6fa4a5ddb6110646f9d98b2ae376a:-1137919371,e4f63e86c7db61105ca83f92815e99e7:158338836,61a6764a9ddb6110a588e5485215e8a6:774220461,f7963ac6c2db61108d9f79aae4ba9a8e:1346364372,2986f6c6bbdb61109d7f88d6b7bb5074:774220461,8e56b64a1edb61105b20c1c20e30645c:-713663231,5245360a8edb611065c6b1dc33734565:1577354963,d1e3fac21ddb611056e2124187c884d9:1398502296,1283be027bdb611085d45fbf0bca1515:1772172592,bc2dae8ab19b6110e171220cb391ab27:303748173</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:13:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_page">sys_ui_page</sys_db_object>
+        <sys_id>bb7a2fab9c154ab6a971f7249b32f6b1</sys_id>
+        <sys_metadata>671d66ce479b6110e83a2778c26d43ea</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>snlite</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_scope_delete display_value="">0f5b7184097a410081a24ad9b92e5c40</sys_scope_delete>
+        <sys_update_name>sys_ui_page_671d66ce479b6110e83a2778c26d43ea</sys_update_name>
+        <sys_update_version display_value="sys_ui_page_671d66ce479b6110e83a2778c26d43ea">681aa18647003110e83a2778c26d43d4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:13:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

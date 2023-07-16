@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>global.SNLiteTemplateAJAX</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>SNLiteTemplateAJAX</name>
+        <script><![CDATA[var SNLiteTemplateAJAX = Class.create();
+SNLiteTemplateAJAX.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    
+	getTemplate: function () {
+		var templateRec = new GlideRecord("sp_ng_template");
+		templateRec.addEncodedQuery("id=snlite-template");
+		templateRec.query();
+		
+		if (templateRec.next()) {
+			return templateRec.getValue("template");
+		}
+	},
+	
+	type: 'SNLiteTemplateAJAX'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 17:34:09</sys_created_on>
+        <sys_id>7a465a86475b6110e83a2778c26d43ff</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>SNLiteTemplateAJAX</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sys_script_include_7a465a86475b6110e83a2778c26d43ff</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-09 21:50:48</sys_updated_on>
+    </sys_script_include>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>
+        <claim_timestamp>188a223ff630000001</claim_timestamp>
+        <metadata_update_name>sys_script_include_7a465a86475b6110e83a2778c26d43ff</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>SNLite</previous_claim_name>
+        <previous_claim_scope>fbd09f86475f6110e83a2778c26d4340</previous_claim_scope>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 21:50:48</sys_created_on>
+        <sys_id>e511d7c6475f6110e83a2778c26d43a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-09 21:50:48</sys_updated_on>
+    </sys_claim>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sys_script_include_7a465a86475b6110e83a2778c26d43ff</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;
+    &lt;sys_script_include action="INSERT_OR_UPDATE"&gt;
+        &lt;access&gt;public&lt;/access&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;api_name&gt;global.SNLiteTemplateAJAX&lt;/api_name&gt;
+        &lt;caller_access/&gt;
+        &lt;client_callable&gt;true&lt;/client_callable&gt;
+        &lt;description/&gt;
+        &lt;name&gt;SNLiteTemplateAJAX&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[var SNLiteTemplateAJAX = Class.create();
+SNLiteTemplateAJAX.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    
+	getTemplate: function () {
+		var templateRec = new GlideRecord("sp_ng_template");
+		templateRec.addEncodedQuery("id=snlite-template");
+		templateRec.query();
+		
+		if (templateRec.next()) {
+			return templateRec.getValue("template");
+		}
+	},
+	
+	type: 'SNLiteTemplateAJAX'
+});]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 17:34:09&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;7a465a86475b6110e83a2778c26d43ff&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;SNLiteTemplateAJAX&lt;/sys_name&gt;
+        &lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_include_7a465a86475b6110e83a2778c26d43ff&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-09 21:50:48&lt;/sys_updated_on&gt;
+    &lt;/sys_script_include&gt;
+    &lt;sys_claim action="INSERT_OR_UPDATE"&gt;
+        &lt;claim_owner_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/claim_owner_scope&gt;
+        &lt;claim_timestamp&gt;188a223ff630000001&lt;/claim_timestamp&gt;
+        &lt;metadata_update_name&gt;sys_script_include_7a465a86475b6110e83a2778c26d43ff&lt;/metadata_update_name&gt;
+        &lt;previous_claim_app_version&gt;1.0.0&lt;/previous_claim_app_version&gt;
+        &lt;previous_claim_name&gt;SNLite&lt;/previous_claim_name&gt;
+        &lt;previous_claim_scope&gt;fbd09f86475f6110e83a2778c26d4340&lt;/previous_claim_scope&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 21:50:48&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;e511d7c6475f6110e83a2778c26d43a5&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-09 21:50:48&lt;/sys_updated_on&gt;
+    &lt;/sys_claim&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>30978492</payload_hash>
+        <record_name>SNLiteTemplateAJAX</record_name>
+        <reverted_from/>
+        <source>770a618647003110e83a2778c26d43dc</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:07:48</sys_created_on>
+        <sys_id>e41aa18647003110e83a2778c26d43ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1896087ef710000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:07:48</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>241aa186cf00311009afd2a87c9734ce</update_guid>
+        <update_guid_history>241aa186cf00311009afd2a87c9734ce:0,1eccf9eaee232110ecc6fa4e10b1ef70:1299956024,2d11d7c6fe5f61106020952e0fe86ea7:2078906052,a5b6de46285b6110e240b18e68cf01b4:485192027,9a561286c25b6110180e5537d20bd8ee:-1438546427</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:13:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>5f4d578d43054310a19bd3b801e8afa1</sys_id>
+        <sys_metadata>7a465a86475b6110e83a2778c26d43ff</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNLiteTemplateAJAX</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_scope_delete display_value="">0f5b7184097a410081a24ad9b92e5c40</sys_scope_delete>
+        <sys_update_name>sys_script_include_7a465a86475b6110e83a2778c26d43ff</sys_update_name>
+        <sys_update_version display_value="sys_script_include_7a465a86475b6110e83a2778c26d43ff">e41aa18647003110e83a2778c26d43ce</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:13:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
