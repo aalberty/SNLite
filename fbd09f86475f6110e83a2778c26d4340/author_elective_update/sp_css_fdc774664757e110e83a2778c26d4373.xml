@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="DELETE">
+        <css>.modal-dialog {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+}
+
+.modal-content {
+    min-width: 50vw;
+}
+
+#snlite-container {
+    min-width: 90%;
+}
+
+.editor-container {
+    display: flex;
+    padding: 0 3vw;
+}
+
+textarea#editor {
+    margin: auto;
+    height: 30vh;
+    width: 100%;
+    resize: none;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.editor-env-footer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1vh;
+}
+
+.col-row-counter {
+    margin: auto 5vw auto auto;
+}</css>
+        <name>snlite-css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-10 23:58:03</sys_created_on>
+        <sys_id>fdc774664757e110e83a2778c26d4373</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>snlite-css</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_css_fdc774664757e110e83a2778c26d4373</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 02:00:50</sys_updated_on>
+    </sp_css>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sp_css_fdc774664757e110e83a2778c26d4373</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>.modal-dialog {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+}
+
+.modal-content {
+    min-width: 50vw;
+}
+
+#snlite-container {
+    min-width: 90%;
+}
+
+.editor-container {
+    display: flex;
+    padding: 0 3vw;
+}
+
+textarea#editor {
+    margin: auto;
+    height: 30vh;
+    width: 100%;
+    resize: none;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.editor-env-footer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1vh;
+}
+
+.col-row-counter {
+    margin: auto 5vw auto auto;
+}</css>
+        <name>snlite-css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-10 23:58:03</sys_created_on>
+        <sys_id>fdc774664757e110e83a2778c26d4373</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>snlite-css</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_css_fdc774664757e110e83a2778c26d4373</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 02:00:50</sys_updated_on>
+    </sp_css>
+</record_update>]]></payload>
+        <payload_hash>-266184058</payload_hash>
+        <record_name>snlite-css</record_name>
+        <reverted_from/>
+        <source/>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:07:48</sys_created_on>
+        <sys_id>e41aa18647003110e83a2778c26d43bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1896087eead0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:07:48</sys_updated_on>
+        <type>Style Sheet</type>
+        <update_guid>a41aa1861d003110302419bfd108b9bc</update_guid>
+        <update_guid_history>b35cb12a50232110216c6594dfca6f7e:-2133113364,75e359a246d7e110b4118d0fb65bf204:-1225008416,20e09d2261d7e1109de833311344b5aa:1748777133,ee30d122f0d7e110fe36737199962131:810634477,e1205122a0d7e110732a6a52ee3546e0:-158660727,0bbf41ae2797e1107e756f42f2fb9734:20788480,b4ae85aec297e1102c44807ff9103463:-1883048609,85fd496e9d97e1104cf26f2b4fdf9c52:1369218407,20ed0d2e8297e11078a16c597441295f:1997593811,f11d0d2ea597e110819245fdd9f5ac58:-960654874,28fc412e7397e110f7f77d49bbee7c48:782981314,b3bc812e1a97e110e6050c8716bb9fae:660665873,608ccdead597e110434ce45e4980bff1:-1084275056,6b5ccdea8997e110488024bedc9619e8:1209830176,8e5c49ead097e1107a2ac65e860500a4:-1379007518,bdfb816ac197e11010a0b280db1f46f2:-385296337,19bb89aa7297e1104a1e65dbcf3af3ee:-1937328913,18ab41ea4897e110d94d312d0ffd3dd2:-1683526052,287bc52a8497e1101cc012c101c68a31:1414056444,24fe746eed57e110caad15bc95952da1:1622894538,2fdef86a0557e110896ad6580fcf6fb3:-841827463,2fc770665a57e11067443723ae61a5d6:-921618131</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:13:45</sys_created_on>
+        <sys_db_object display_value="" name="sp_css">sp_css</sys_db_object>
+        <sys_id>079f6c679b974a2789162c6cea465be1</sys_id>
+        <sys_metadata>fdc774664757e110e83a2778c26d4373</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>snlite-css</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_scope_delete display_value="">0f5b7184097a410081a24ad9b92e5c40</sys_scope_delete>
+        <sys_update_name>sp_css_fdc774664757e110e83a2778c26d4373</sys_update_name>
+        <sys_update_version display_value="sp_css_fdc774664757e110e83a2778c26d4373">e41aa18647003110e83a2778c26d43bc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:13:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

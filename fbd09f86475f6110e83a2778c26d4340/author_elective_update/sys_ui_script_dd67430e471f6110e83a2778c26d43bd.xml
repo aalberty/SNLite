@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="DELETE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>snliteController</name>
+        <script><![CDATA[var snliteApp = angular.module("snlite", []);
+snliteApp.controller('snliteCtrl', function ($scope) {
+	// Take focus away from close button so that it doesn't leave a tooltip
+	// artifact on quick close
+	document.getElementById("snlite_closemodal").blur();
+
+	$scope.logText = function () {
+		console.log("editor contents: ", $scope.codeInput);
+		//var textArea = $('textarea#editor');
+		//console.log("editor: ", textArea);
+	}
+
+	$scope.runCode = function () {
+		//alert("running: " + $scope.codeInput);
+		var ga = new GlideAjax("SNLiteAJAX");
+		ga.addParam("sysparm_name", "createScheduledJob");
+		ga.addParam("sysparm_script", $scope.codeInput);
+		ga.getXMLAnswer(_scheduledJobCallback);
+	};
+
+	function _scheduledJobCallback () {
+		
+	}
+});]]></script>
+        <script_name/>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 21:08:38</sys_created_on>
+        <sys_id>dd67430e471f6110e83a2778c26d43bd</sys_id>
+        <sys_mod_count>49</sys_mod_count>
+        <sys_name>snliteController</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sys_ui_script_dd67430e471f6110e83a2778c26d43bd</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 17:03:57</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>
+        <claim_timestamp>188a223a5dc0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_script_dd67430e471f6110e83a2778c26d43bd</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>SNLite</previous_claim_name>
+        <previous_claim_scope>fbd09f86475f6110e83a2778c26d4340</previous_claim_scope>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 21:50:25</sys_created_on>
+        <sys_id>7bf0d3c6475f6110e83a2778c26d4358</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-09 21:50:25</sys_updated_on>
+    </sys_claim>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sys_ui_script_dd67430e471f6110e83a2778c26d43bd</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;
+    &lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;description/&gt;
+        &lt;global&gt;false&lt;/global&gt;
+        &lt;ignore_in_now_experience&gt;false&lt;/ignore_in_now_experience&gt;
+        &lt;name&gt;snliteController&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[var snliteApp = angular.module("snlite", []);
+snliteApp.controller('snliteCtrl', function ($scope) {
+	// Take focus away from close button so that it doesn't leave a tooltip
+	// artifact on quick close
+	document.getElementById("snlite_closemodal").blur();
+
+	$scope.logText = function () {
+		console.log("editor contents: ", $scope.codeInput);
+		//var textArea = $('textarea#editor');
+		//console.log("editor: ", textArea);
+	}
+
+	$scope.runCode = function () {
+		//alert("running: " + $scope.codeInput);
+		var ga = new GlideAjax("SNLiteAJAX");
+		ga.addParam("sysparm_name", "createScheduledJob");
+		ga.addParam("sysparm_script", $scope.codeInput);
+		ga.getXMLAnswer(_scheduledJobCallback);
+	};
+
+	function _scheduledJobCallback () {
+		
+	}
+});]]&gt;&lt;/script&gt;
+        &lt;script_name/&gt;
+        &lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 21:08:38&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;dd67430e471f6110e83a2778c26d43bd&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;49&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;snliteController&lt;/sys_name&gt;
+        &lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_ui_script_dd67430e471f6110e83a2778c26d43bd&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-11 17:03:57&lt;/sys_updated_on&gt;
+        &lt;ui_type&gt;0&lt;/ui_type&gt;
+        &lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;
+    &lt;/sys_ui_script&gt;
+    &lt;sys_claim action="INSERT_OR_UPDATE"&gt;
+        &lt;claim_owner_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/claim_owner_scope&gt;
+        &lt;claim_timestamp&gt;188a223a5dc0000001&lt;/claim_timestamp&gt;
+        &lt;metadata_update_name&gt;sys_ui_script_dd67430e471f6110e83a2778c26d43bd&lt;/metadata_update_name&gt;
+        &lt;previous_claim_app_version&gt;1.0.0&lt;/previous_claim_app_version&gt;
+        &lt;previous_claim_name&gt;SNLite&lt;/previous_claim_name&gt;
+        &lt;previous_claim_scope&gt;fbd09f86475f6110e83a2778c26d4340&lt;/previous_claim_scope&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 21:50:25&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;7bf0d3c6475f6110e83a2778c26d4358&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-09 21:50:25&lt;/sys_updated_on&gt;
+    &lt;/sys_claim&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-941814182</payload_hash>
+        <record_name>snliteController</record_name>
+        <reverted_from/>
+        <source>770a618647003110e83a2778c26d43dc</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:07:48</sys_created_on>
+        <sys_id>e41aa18647003110e83a2778c26d43e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1896087f04e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:07:48</sys_updated_on>
+        <type>UI Script</type>
+        <update_guid>241aa1869600311030071458a75255e0</update_guid>
+        <update_guid_history>241aa1869600311030071458a75255e0:0,74bcfdaa4b232110827464b97d0225ce:1135340014,df9220728d572510cd13f40fcaa2404c:2050875258,413208be76932510c1d7db75c33ba86f:1738858202,8effffead19325107dc56304777b3324:-1392143622,1dff7fea9c9325104184fae2004ae172:-984717276,36cf376aa79325108658d799de97cb78:-426626212,8124d126add7e110a90fb74bd0565f74:1719125529,e3145de2acd7e110b7091ff49076df86:-1024782417,3d14d126fbd7e110226996db2737156f:65558592,6d145de2c2d7e1102f6759c385669081:1786712497,b7f3112621d7e1102b2f27f0ffe85e56:1171487564,17f3d12615d7e11044562932fe40766a:-896391892,01f3112648d7e1103129036c98945b52:-671994013,62a315a20cd7e110df6661f635855713:331969357,976219a2b7d7e1104a03ff6eb1746ea5:775306061,c22215a253d7e110474b572da1c46d0a:318350739,8151592243d7e110a71b24d1e1179948:1683754719,ce41512240d7e1101151670170b8ade7:29545320,dd7ccdeaf697e110ee156c1759fe17ec:-1164759571,315485a2e297e11091544bfd04114937:-692205052,89f341e24f97e110b7e695ebcf3e92d9:-1925243159,7253c5a24597e110d956d5a59ba00e72:-692205052,ec300dae9857e11088dfb6ee9013fd96:1335358232,5e6f386e7b57e1100e864cdbdf1c36eb:-723980404,7bf0d3c6135f6110a64e4724fd807d5a:-692205052,65b0db86ef5f61100061f552e8b17b04:-2141193940,60909f86235f611034d459ecd1ac862b:147815424,c1601f46485f6110180454ebcd952698:1788331861,87acc382da5f6110cc201354b4663d04:2022292719,8dacc382f05f6110ec45975bdd9ac000:-530735244,5f9c0f02c15f61105a682fe0c78ff1cb:-691621585,a77ccf42685f6110143e54454b9379ce:262557641,744c0f02965f6110c802cf513e7838c8:306675789,c70cc7429f5f6110d29e72c202d40843:-744207740,ce0cc742a45f61100690c6a5ea6a7c3f:1750904162,dd0c8702af5f6110ad1bb2172b97fc85:1857173520,fddac7ce611f6110950168130f6024e6:1718120411,a9bac7cef31f6110f509cdf601a40be2:1098218233,b5790bca491f61105ce85e833f6f57a4:1718120411,a639c74e4f1f6110d275f421c3c6367a:1381065622,5b09834eaa1f611097510dfc9e94479f:-149026522,2cf8070ef31f6110818d424ed5dc35d2:-195969491,46c8c34e371f6110bcc26bc6aa074c76:240351478,64b8c38a891f6110dc3079624ac9e7e3:-195969491,3da8c74e0e1f6110ee04610ec528a374:1638917552,2e68cfca541f6110c3f8622bad379302:-149026522,3758c7cabd1f6110a1b49ec3fa64e96d:1439630246,a258430e731f6110ca16556d9ffd0bc7:-1587543457,9948430eb81f6110d9438d103a9641c3:-1040422886,c497070ed51f6110350110acb5602bcd:1553930052,b367430e2b1f6110eb2cf28f73121481:142883357</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-16 21:13:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_script">sys_ui_script</sys_db_object>
+        <sys_id>62bff4036a6f4da6a8de4a278398ac64</sys_id>
+        <sys_metadata>dd67430e471f6110e83a2778c26d43bd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>snliteController</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_scope_delete display_value="">0f5b7184097a410081a24ad9b92e5c40</sys_scope_delete>
+        <sys_update_name>sys_ui_script_dd67430e471f6110e83a2778c26d43bd</sys_update_name>
+        <sys_update_version display_value="sys_ui_script_dd67430e471f6110e83a2778c26d43bd">e41aa18647003110e83a2778c26d43e0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-16 21:13:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
