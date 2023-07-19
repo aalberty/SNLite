@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="DELETE">
+        <id>snlite-template</id>
+        <sp_widget/>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 17:31:57</sys_created_on>
+        <sys_id>f3c55286475b6110e83a2778c26d433c</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>snlite-template</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_ng_template_f3c55286475b6110e83a2778c26d433c</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 02:00:24</sys_updated_on>
+        <template><![CDATA[<div class="editor-env-container" ng-controller="snliteCtrl">
+
+  <div class="editor-container">
+
+    <textarea 
+      id="editor" 
+      name="editor" 
+      rows="15" 
+      cols="80" 
+      ng-model="codeInput"></textarea>
+
+  </div>
+
+  <div class="editor-env-footer">
+
+    <button type="button" ng-click="logText()">Log</button>
+    
+    <button type="button" ng-click="runCode()">Run</button>
+    
+    <!--<span class="col-row-counter">c: {{col}} r: {{row}}</span>-->
+
+
+
+  </div>
+
+</div>
+  
+]]></template>
+    </sp_ng_template>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>
+        <claim_timestamp>188a223c2a20000001</claim_timestamp>
+        <metadata_update_name>sp_ng_template_f3c55286475b6110e83a2778c26d433c</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>SNLite</previous_claim_name>
+        <previous_claim_scope>fbd09f86475f6110e83a2778c26d4340</previous_claim_scope>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 21:50:32</sys_created_on>
+        <sys_id>fd0197c6475f6110e83a2778c26d43d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-09 21:50:32</sys_updated_on>
+    </sys_claim>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sp_ng_template_f3c55286475b6110e83a2778c26d433c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_ng_template"&gt;&lt;sp_ng_template action="INSERT_OR_UPDATE"&gt;&lt;id&gt;snlite-template&lt;/id&gt;&lt;sp_widget/&gt;&lt;sys_class_name&gt;sp_ng_template&lt;/sys_class_name&gt;&lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-06-09 17:31:57&lt;/sys_created_on&gt;&lt;sys_id&gt;f3c55286475b6110e83a2778c26d433c&lt;/sys_id&gt;&lt;sys_mod_count&gt;27&lt;/sys_mod_count&gt;&lt;sys_name&gt;snlite-template&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_ng_template_f3c55286475b6110e83a2778c26d433c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-06-11 02:00:24&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="editor-env-container" ng-controller="snliteCtrl"&gt;
+
+  &lt;div class="editor-container"&gt;
+
+    &lt;textarea 
+      id="editor" 
+      name="editor" 
+      rows="15" 
+      cols="80" 
+      ng-model="codeInput"&gt;&lt;/textarea&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class="editor-env-footer"&gt;
+
+    &lt;button type="button" ng-click="logText()"&gt;Log&lt;/button&gt;
+    
+    &lt;button type="button" ng-click="runCode()"&gt;Run&lt;/button&gt;
+    
+    &lt;!--&lt;span class="col-row-counter"&gt;c: {{col}} r: {{row}}&lt;/span&gt;--&gt;
+
+
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+  
+]]&gt;&lt;/template&gt;&lt;/sp_ng_template&gt;&lt;sys_claim action="INSERT_OR_UPDATE"&gt;&lt;claim_owner_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/claim_owner_scope&gt;&lt;claim_timestamp&gt;188a223c2a20000001&lt;/claim_timestamp&gt;&lt;metadata_update_name&gt;sp_ng_template_f3c55286475b6110e83a2778c26d433c&lt;/metadata_update_name&gt;&lt;previous_claim_app_version&gt;1.0.0&lt;/previous_claim_app_version&gt;&lt;previous_claim_name&gt;SNLite&lt;/previous_claim_name&gt;&lt;previous_claim_scope&gt;fbd09f86475f6110e83a2778c26d4340&lt;/previous_claim_scope&gt;&lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-06-09 21:50:32&lt;/sys_created_on&gt;&lt;sys_id&gt;fd0197c6475f6110e83a2778c26d43d1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-06-09 21:50:32&lt;/sys_updated_on&gt;&lt;/sys_claim&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2041892714</payload_hash>
+        <record_name>snlite-template</record_name>
+        <reverted_from/>
+        <source>5a84d93047532110e83a2778c26d43aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-11 02:00:24</sys_created_on>
+        <sys_id>efc319a247d7e110e83a2778c26d43ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>188a82eded30000001</sys_recorded_at>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-11 02:00:24</sys_updated_on>
+        <type>Angular ng-template</type>
+        <update_guid>e7c319a27cd7e110a852ee58d38acaae</update_guid>
+        <update_guid_history>e7c319a27cd7e110a852ee58d38acaae:2041892714,84b3196264d7e11023bb6fec126f54c0:359327723,ac21d1225bd7e11099aed5ce659d1539:1089118494,e4ad812e7697e110b6c569aef7e6bdb3:1602026943,bf6d0deae297e11017e8f75e74fb263d:1782248019,807c412e3697e110937af336cb17b642:42471731,8d2c41eae697e1101268d55d704638d8:1054395715,3e1c89aad297e110b17bfe0f18b050f3:-222642072,e02b892a4197e110955ed95d8dd672fc:913664064,4b2049aeba57e110dcfd9084a7af3ff3:-535948468,83ef78ae7057e1108f24454808282def:-155034146,459674e24957e110da6753236b62a318:2041605745,fd0197c60a5f6110a311df1276e72ad3:-155034146,9bd68f8ac31f6110d319ec0e8139a882:1477477550,3c65cb4a221f61102106f21773dee252:-1542128801,7f2343c2dd1f61108e89ac5621cf6ed0:-49916389,d1230b46641f61107b587a99a8677210:-1936622949,288b920e9b5b6110ac7c280da9649e12:-755928371,e60b124aff5b6110d2fdecea255acc2f:87055297,d31a9e0ac35b6110f7c6a0fabc69c94b:1624212808,47f9920add5b611081d5ff7310f51a40:1959134575,7c699e0acc5b611075e3e47acd5dea5d:32527186,5249964a055b61101aebbe50ce5d1dd6:1354401018,3b39124afd5b61108f1c262e38e06739:739693749,c838da86935b6110480a027dff006e90:-1695874978,be289286115b6110978018bde2a838f8:1489245022,cfa7da46955b6110abffcc333cc2090f:-1606501288,f9d5d246685b6110f637e9066604cfe7:1836917758</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="snlite-template">0e64b40f47443110e83a2778c26d4353</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-19 19:47:17</sys_created_on>
+        <sys_db_object display_value="" name="sp_ng_template">sp_ng_template</sys_db_object>
+        <sys_id>612c51ec2e9d478aa8ee9ecdb6880204</sys_id>
+        <sys_metadata>f3c55286475b6110e83a2778c26d433c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>snlite-template</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_scope_delete display_value="">0f5b7184097a410081a24ad9b92e5c40</sys_scope_delete>
+        <sys_update_name>sp_ng_template_f3c55286475b6110e83a2778c26d433c</sys_update_name>
+        <sys_update_version display_value="sp_ng_template_f3c55286475b6110e83a2778c26d433c">efc319a247d7e110e83a2778c26d43ae</sys_update_version>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-19 19:47:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

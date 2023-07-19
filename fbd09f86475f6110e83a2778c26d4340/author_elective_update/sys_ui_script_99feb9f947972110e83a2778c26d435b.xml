@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="DELETE">
+        <active>true</active>
+        <description/>
+        <global>true</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>snlite</name>
+        <script><![CDATA[(function () {
+	document.addEventListener('keydown', function (event) {
+		if (event.ctrlKey && event.key === "\\") {
+			popOverlay();
+		}
+	});
+})();
+
+
+function popOverlay () {
+	var go = new GlideOverlay({
+		title: "SNLite",
+		iframe: "/display?id=snlite",
+		closeOnEscape: true,
+		showClose: true,
+		height: "90%",
+		width: "90%"
+	});
+
+	go.center();
+	go.render();
+}]]></script>
+        <script_name/>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-08 21:13:46</sys_created_on>
+        <sys_id>99feb9f947972110e83a2778c26d435b</sys_id>
+        <sys_mod_count>55</sys_mod_count>
+        <sys_name>snlite</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sys_ui_script_99feb9f947972110e83a2778c26d435b</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-23 15:38:11</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>
+        <claim_timestamp>188a22494ed0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_script_99feb9f947972110e83a2778c26d435b</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>SNLite</previous_claim_name>
+        <previous_claim_scope>fbd09f86475f6110e83a2778c26d4340</previous_claim_scope>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-06-09 21:51:26</sys_created_on>
+        <sys_id>723197c6475f6110e83a2778c26d43db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-06-09 21:51:26</sys_updated_on>
+    </sys_claim>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sys_ui_script_99feb9f947972110e83a2778c26d435b</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;
+    &lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;description/&gt;
+        &lt;global&gt;true&lt;/global&gt;
+        &lt;ignore_in_now_experience&gt;false&lt;/ignore_in_now_experience&gt;
+        &lt;name&gt;snlite&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[(function () {
+	document.addEventListener('keydown', function (event) {
+		if (event.ctrlKey &amp;&amp; event.key === "\\") {
+			popOverlay();
+		}
+	});
+})();
+
+
+function popOverlay () {
+	var go = new GlideOverlay({
+		title: "SNLite",
+		iframe: "/display?id=snlite",
+		closeOnEscape: true,
+		showClose: true,
+		height: "90%",
+		width: "90%"
+	});
+
+	go.center();
+	go.render();
+}]]&gt;&lt;/script&gt;
+        &lt;script_name/&gt;
+        &lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-08 21:13:46&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;99feb9f947972110e83a2778c26d435b&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;55&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;snlite&lt;/sys_name&gt;
+        &lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_ui_script_99feb9f947972110e83a2778c26d435b&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-23 15:38:11&lt;/sys_updated_on&gt;
+        &lt;ui_type&gt;0&lt;/ui_type&gt;
+        &lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;
+    &lt;/sys_ui_script&gt;
+    &lt;sys_claim action="INSERT_OR_UPDATE"&gt;
+        &lt;claim_owner_scope display_value="SNLite"&gt;fbd09f86475f6110e83a2778c26d4340&lt;/claim_owner_scope&gt;
+        &lt;claim_timestamp&gt;188a22494ed0000001&lt;/claim_timestamp&gt;
+        &lt;metadata_update_name&gt;sys_ui_script_99feb9f947972110e83a2778c26d435b&lt;/metadata_update_name&gt;
+        &lt;previous_claim_app_version&gt;1.0.0&lt;/previous_claim_app_version&gt;
+        &lt;previous_claim_name&gt;SNLite&lt;/previous_claim_name&gt;
+        &lt;previous_claim_scope&gt;fbd09f86475f6110e83a2778c26d4340&lt;/previous_claim_scope&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-06-09 21:51:26&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;723197c6475f6110e83a2778c26d43db&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-06-09 21:51:26&lt;/sys_updated_on&gt;
+    &lt;/sys_claim&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>562504465</payload_hash>
+        <record_name>snlite</record_name>
+        <reverted_from/>
+        <source>d444fccb47443110e83a2778c26d43dc</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-19 19:46:39</sys_created_on>
+        <sys_id>b444300f47443110e83a2778c26d43b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1896fb0b5830000001</sys_recorded_at>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-19 19:46:39</sys_updated_on>
+        <type>UI Script</type>
+        <update_guid>f044300f8e4431107ea5aaf35d2a01b2</update_guid>
+        <update_guid_history>f044300f8e4431107ea5aaf35d2a01b2:0,985c614aa10031101a15c621a8194775:0,3f02caee3d23211046943ed25f136939:911579601,a01aa186c0003110aa7c91aca56917da:0,3f02caee3d23211046943ed25f136939:911579601,2002ca62f3632110db337838c0c9680f:277165345,e3700eae632321105d7b5dca86c8b4e4:1041320958,f1700eaee323211011720c6eb5c8dfe0:454484074,8fcf71ee2023211065ab61ab1cb8c500:-1976348249,8caf31ee1d2321107c179ed91b823ffc:-205747230,627fb5ae1523211094d233e1a17ad19e:873789894,e56ff5ae31232110a863035c0ef42978:-834851452,e8fcfdea1e2321105c5c191afe490917:2078646901,76ecbdeaf8232110fc85a6a44da57d73:860027121,b9f9b12a4523211011b299fd800e7cd1:258946595,0f4939e6dc232110e06a62042ca7d15f:-1152506130,9d783da6cb23211077bc69516359c13f:1492340373,df45b1e2aa23211057056f767797adae:-59729905,7f35b162d023211006a916bf5047960e:2077478505,f372b1d6882321109142395784dd4ff7:-1626184336,764d0e0b2f1721106db8b569bfa3cafc:-1711014096,e0b08ecf4f932110bd33b2a23b527c96:1430396834,93a04a0f3ad321106f4941c28745a487:158011248,299046037ad32110b1a22e9729552303:1054680259,07dd790f66d3211056893fbad1b81a81:-310229156,85dd3503f4d321103818ac393504cafe:-326318583,1bcd75034cd321106fbfca0922ae4c0b:273854409,45cdb10364d32110015da06d182f317a:1588779089,7ebdf5035ad321104d452a86a40a5d88:-1353029103,c2a239cfab932110e9af6d71a02e0bab:-1511411358,b08275479d1321101fdcff35755c0880:1430396834,bc62bdcf62932110c9df296d071928c7:-217976341,0652f1c3411321105c397dfafc423f03:-846329478,3631dbc63c5f6110e7037501021b9dc5:705980709,4407838a491f6110f23945cc57903abc:1519874439,401d26ceff9b6110c8379ea627b06210:663126459,650d26ce239b6110f9e7b75bffd4c50c:-1971918206,9718920a945b61104dbbd18ee8b0db0a:1671809949,ae18da0aea5b6110d80777a47ec8f8fd:-1654878213,2108520a525b611094bbb066da946a2a:2026340921,3b975286735b6110ae4195f6855b1d47:-1012159882,4a775286c25b61108b5863e2058f7e43:-943981059,9bd65286835b6110297ee2412f41814d:-51752258,4a465a86de5b61108a210d711dfa9a8b:-1864869181,bb261246475b61104e8ec35bde95e904:-1711668069,95165686f05b61105f1f61fe3bf208ce:-486560231,e375da46235b6110803dbbeebb69bb06:-474186901,3e751646745b61109e17c3cbdcb47866:700170502,14751646e35b61101a62fe4fdf422363:-322817559,0925d206275b6110e1dbdc60298776f9:1344167485,8bd94e75d6d72110a973c93ace70d915:2002821304,fb918a7de89721107ddac52430f3bb34:-2090641148,7c818a7dfd97211031256afab7e12b30:1968297097,b201c6bd5197211014541c306fa87f8b:601402758,0101827d2197211024a0fd741760d14c:-896316846,53f00a7d5a97211082b21296391080e5:601402758,50804e7d9597211055f0a7b95207beec:-1043894807,59304a3d209721108cb35471e8b1d926:-1406825998,e95f753d61972110b449f0a8c9f33ebc:-1781151300,150fb9f9279721109be366299dd24e60:641492558</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-19 19:47:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_script">sys_ui_script</sys_db_object>
+        <sys_id>42f9b612bf8b439ea5b65432cdccd7a4</sys_id>
+        <sys_metadata>99feb9f947972110e83a2778c26d435b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>snlite</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_scope_delete display_value="">0f5b7184097a410081a24ad9b92e5c40</sys_scope_delete>
+        <sys_update_name>sys_ui_script_99feb9f947972110e83a2778c26d435b</sys_update_name>
+        <sys_update_version display_value="sys_ui_script_99feb9f947972110e83a2778c26d435b">b444300f47443110e83a2778c26d43b2</sys_update_version>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-19 19:47:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
