@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function () {
+  var c = this;
+
+  /* Functions */
+  c.getRecords = getRecords;
+
+  /* Variable initialization */
+  c.treeQuery = "";
+  c.tables = c.data.tables;
+  c.records = [];
+
+  console.log(c.tables);
+  console.log(c);
+
+  /* Function definitions */
+  function getRecords(table) {
+    var inputs = {
+      "action": "getRecords",
+      "table": table
+    };
+    c.server.get(inputs).then(function (res) {
+      c.records = res.data.records;
+    });
+  }
+
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>i.search-icon {&#13;
+    width: 5rem;&#13;
+    height: 5rem;&#13;
+} </css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>tree_browser</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Tree Browser</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  var tables = new GlideRecord("sys_db_object");
+  tables.query();
+  data.tables = [];
+
+  while (tables.next()) {
+    data.tables.push({
+      "sys_id": tables.getUniqueValue(),
+      "name": tables.getValue("name"),
+      "label": tables.getValue("label")
+    });
+  }
+
+
+  if (input) {
+    
+    if (input.action && input.action == "getRecords" && input.table) {
+      var recs = new GlideRecord()
+    }
+
+  }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-19 20:17:38</sys_created_on>
+        <sys_id>725bb8cf47443110e83a2778c26d4360</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>Tree Browser</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_widget_725bb8cf47443110e83a2778c26d4360</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-19 21:15:04</sys_updated_on>
+        <template><![CDATA[<div class="browser-container">
+
+    <div class="search-container">
+        <select ng-model="c.selectedTable" ng-options="table.label for table in c.tables"></select>
+    </div>
+
+    <div class="records-container">
+        
+        <table class="record-table">
+            <tr class="node record-node" 
+            ng-repeat="record in c.records">
+                <td>{{record.displayValue}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
