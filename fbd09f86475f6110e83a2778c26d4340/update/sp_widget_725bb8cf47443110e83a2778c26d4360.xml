@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function () {
+        <client_script><![CDATA[api.controller = function ($scope) {
   var c = this;
 
   /* Functions */
   c.getRecords = getRecords;
-
+  c.recordClicked = recordClicked; 
+  
   /* Variable initialization */
-  c.treeQuery = "";
+  c.selectedTable = "";
   c.tables = c.data.tables;
   c.records = [];
 
-  console.log(c.tables);
-  console.log(c);
 
   /* Function definitions */
-  function getRecords(table) {
+  function getRecords(item) {
+
     var inputs = {
       "action": "getRecords",
-      "table": table
+      "table": item.name
     };
     c.server.get(inputs).then(function (res) {
       c.records = res.data.records;
     });
+
   }
 
+  function recordClicked(record) {
+    var input = {
+      "action": "getRecordForDisplay",
+      "table": c.selectedTable.name,
+      "sys_id": record.sys_id
+    };
+
+    c.server.get(input).then(function (res) {
+      // cache json
+      record.json = res.data.recordForDisplay;
+      // emit for display
+      $scope.$emit('contentReady', {"content": record.json});
+    });
+  }
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -53,6 +68,9 @@
   var tables = new GlideRecord("sys_db_object");
   tables.query();
   data.tables = [];
+  data.records = [];
+  data.schemas = {};
+  data.recordForDisplay;
 
   while (tables.next()) {
     data.tables.push({
@@ -63,13 +81,71 @@
   }
 
 
+  /* Capture requests from client script */
   if (input) {
     
     if (input.action && input.action == "getRecords" && input.table) {
-      var recs = new GlideRecord()
+      var recs = new GlideRecord(input.table);
+      recs.query();
+      
+      while (recs.next()) {
+        data.records.push({
+          "displayValue": recs.getDisplayValue(),
+          "sys_id": recs.getUniqueValue(),
+          "json": {}
+        });
+      }
+    }
+
+    if (input.action && input.action == "getRecordForDisplay" && input.table && input.sys_id) {
+      var rec = new GlideRecord(input.table);
+      if (rec.get(input.sys_id)) {
+        generateRecordJson(rec);
+      }
     }
 
   }
+
+
+  /* Util funcs for server script */
+  function buildSchema (tableName) {
+    // confirm it hasn't already been built
+    var schemaExists = data.schemas[tableName] && !gs.nil(data.schemas[tableName]);
+
+    if (!schemaExists) {
+      // get table heirarchy
+      var gth = new GlideTableHierarchy(tableName);
+      var tables = gth.getTables().join(",");
+      var colgr = new GlideRecord("sys_dictionary_list");
+      colgr.addEncodedQuery("nameIN" + tables + "^internal_type!=collection^ORinternal_type=NULL");
+      colgr.query();
+      var schema = {};
+
+      while (colgr.next()) {
+        schema[colgr.getValue("element")] = {
+          "internal_type": colgr.getValue("internal_type"),
+          "reference": colgr.getValue("reference")
+        };
+      }
+
+      data.schemas[tableName] = schema;
+    }
+  }
+
+
+  function generateRecordJson(gr) {
+    var util = new global.GlideRecordUtil();
+    var fields = util.getFields(gr);
+    var recjson = {};
+
+    fields.forEach(function (field) {
+      recjson[field] = "";
+    });
+
+    util.populateFromGR(recjson, gr);
+    data.recordForDisplay = recjson;
+  }
+
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -77,26 +153,31 @@
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-07-19 20:17:38</sys_created_on>
         <sys_id>725bb8cf47443110e83a2778c26d4360</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>111</sys_mod_count>
         <sys_name>Tree Browser</sys_name>
         <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sp_widget_725bb8cf47443110e83a2778c26d4360</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2023-07-19 21:15:04</sys_updated_on>
+        <sys_updated_on>2023-07-20 18:28:07</sys_updated_on>
         <template><![CDATA[<div class="browser-container">
 
-    <div class="search-container">
-        <select ng-model="c.selectedTable" ng-options="table.label for table in c.tables"></select>
-    </div>
+<input type="text" 
+    ng-model="c.selectedTable" 
+    uib-typeahead="table as table.label for table in c.tables | filter:{label:$viewValue}" 
+    class="form-control" 
+    typeahead-on-select="c.getRecords($item)"
+    typeahead-show-hint="true"
+    typeahead-min-length="3" />
+
 
     <div class="records-container">
         
         <table class="record-table">
             <tr class="node record-node" 
             ng-repeat="record in c.records">
-                <td>{{record.displayValue}}</td>
+                <td ng-click="c.recordClicked(record)">{{record.displayValue}}</td>
             </tr>
         </table>
 

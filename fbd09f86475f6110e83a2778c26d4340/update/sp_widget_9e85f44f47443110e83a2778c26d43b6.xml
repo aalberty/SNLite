@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+  c.content;
+  c.consoleCollapsed = true;
+
+  $scope.$on('contentReady', function (event, data) {
+    c.content = data;
+  });
+
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>// palette values #27374D, #526D82, #9DB2BF, #DDE6ED&#13;
 &#13;
+.codespace-top-container {&#13;
+    display: flex;&#13;
+    flex-flow: column;&#13;
+    width: 100%;&#13;
+    height: 99vh;&#13;
+}&#13;
 &#13;
-.codespace-container {&#13;
+.codespace-main-section-container {&#13;
     display: flex;&#13;
     flex-flow: row;&#13;
+    flex-grow: 1;&#13;
     width: 100%;&#13;
     min-width: 50vw;   &#13;
     min-height: 10vh;&#13;
@@ -21,6 +38,37 @@
     width: 100%;&#13;
     border: 1px solid black;&#13;
     min-width: 5vw;&#13;
+    overflow-y: auto;&#13;
+    max-height: 94vh;&#13;
+}&#13;
+&#13;
+&#13;
+.console.console-tray {&#13;
+    display: flex;&#13;
+    flex-flow: column;&#13;
+    margin-left: auto;&#13;
+    margin-right: auto;&#13;
+    border: 1px solid black;&#13;
+    width: 100%;&#13;
+    max-width: 100%;&#13;
+    height: auto;&#13;
+}&#13;
+&#13;
+.console.console-tray.collapsed {&#13;
+    height: 1vh;&#13;
+}&#13;
+&#13;
+.console.console-menu-bar {&#13;
+    height: 1vh;&#13;
+    width: 100%;&#13;
+    display: flex;&#13;
+    flex-flow: row-reverse;&#13;
+}&#13;
+&#13;
+.console.console-content {&#13;
+    height: auto;&#13;
+    min-height: 5vh;&#13;
+    width: 100%;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -41,31 +89,49 @@
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-07-19 19:52:13</sys_created_on>
         <sys_id>9e85f44f47443110e83a2778c26d43b6</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>Codespace</sys_name>
         <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sp_widget_9e85f44f47443110e83a2778c26d43b6</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2023-07-19 20:36:13</sys_updated_on>
-        <template><![CDATA[<div class="codespace-container">
+        <sys_updated_on>2023-07-20 19:07:34</sys_updated_on>
+        <template><![CDATA[<div class="codespace-top-container">
+
+    <div class="codespace-main-section-container">
 
 
-<div class="tray left-tray widget-col">
-    <div>
-        <widget id="tree_browser">
+        <div class="tray left-tray widget-col">
+            <div>
+                <widget id="tree_browser">
+            </div>
+        </div>
+
+        <div class="main-content widget-col">
+            <pre>{{c.content | json:4}}</pre>
+        </div>
+
+        <div class="tray right-tray widget-col">
+
+        </div>
+
     </div>
-</div>
 
-<div class="main-content widget-col">
+    <div class="console console-tray">
 
-</div>
+        <div class="console console-menu-bar">
+            <i class="minimize-button fa-sharp fa-regular fa-minimize" ng-if="!c.consoleCollapsed"></i>
+            <i class="maximize-button fa-sharp fa-regular fa-maximize" ng-if="c.consoleCollapsed"></i>
 
-<div class="tray right-tray widget-col">
 
-</div>
+        </div>
 
+        <div class="console console-content">
+
+        </div>
+
+    </div>
 </div>]]></template>
     </sp_widget>
 </record_update>
