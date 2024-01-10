@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency">
+    <sp_dependency action="INSERT_OR_UPDATE">
+        <module/>
+        <name>Editor.js</name>
+        <page_load>true</page_load>
+        <sp_portals/>
+        <sys_class_name>sp_dependency</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-10 00:02:19</sys_created_on>
+        <sys_id>8643b9cf476b71101958ae4b116d4340</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Editor.js</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_dependency_8643b9cf476b71101958ae4b116d4340</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-10 00:08:35</sys_updated_on>
+    </sp_dependency>
+</record_update>

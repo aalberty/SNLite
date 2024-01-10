@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_dependency display_value="Editor.js">8643b9cf476b71101958ae4b116d4340</sp_dependency>
+        <sp_js_include display_value="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.28.2/dist/editorjs.umd.min.js">d8b3b10347ab71101958ae4b116d4333</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-10 00:03:48</sys_created_on>
+        <sys_id>28c379cf476b71101958ae4b116d4393</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Editor.js.https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.28.2/dist/editorjs.umd.min.js</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_28c379cf476b71101958ae4b116d4393</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-10 00:03:48</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+</record_update>
