@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_css">
+    <content_css action="INSERT_OR_UPDATE">
+        <name>epic_editor_preview_preview_dark</name>
+        <style>html { padding:0 10px; }&#13;
+&#13;
+body {&#13;
+  margin:0;&#13;
+  padding:10px 0;&#13;
+  background:#000;&#13;
+}&#13;
+&#13;
+.epiceditor-preview h1,&#13;
+.epiceditor-preview h2,&#13;
+.epiceditor-preview h3,&#13;
+.epiceditor-preview h4,&#13;
+.epiceditor-preview h5,&#13;
+.epiceditor-preview h6,&#13;
+.epiceditor-preview p,&#13;
+.epiceditor-preview blockquote {&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+}&#13;
+.epiceditor-preview {&#13;
+    background:#000;&#13;
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;&#13;
+    font-size: 13px;&#13;
+    line-height: 18px;&#13;
+    color: #ccc;&#13;
+}&#13;
+.epiceditor-preview a {&#13;
+    color: #fff;&#13;
+}&#13;
+.epiceditor-preview a:hover {&#13;
+    color: #00ff00;&#13;
+    text-decoration: none;&#13;
+}&#13;
+.epiceditor-preview a img {&#13;
+    border: none;&#13;
+}&#13;
+.epiceditor-preview p {&#13;
+    margin-bottom: 9px;&#13;
+}&#13;
+.epiceditor-preview h1,&#13;
+.epiceditor-preview h2,&#13;
+.epiceditor-preview h3,&#13;
+.epiceditor-preview h4,&#13;
+.epiceditor-preview h5,&#13;
+.epiceditor-preview h6 {&#13;
+    color: #cdcdcd;&#13;
+    line-height: 36px;&#13;
+}&#13;
+.epiceditor-preview h1 {&#13;
+    margin-bottom: 18px;&#13;
+    font-size: 30px;&#13;
+}&#13;
+.epiceditor-preview h2 {&#13;
+    font-size: 24px;&#13;
+}&#13;
+.epiceditor-preview h3 {&#13;
+    font-size: 18px;&#13;
+}&#13;
+.epiceditor-preview h4 {&#13;
+    font-size: 16px;&#13;
+}&#13;
+.epiceditor-preview h5 {&#13;
+    font-size: 14px;&#13;
+}&#13;
+.epiceditor-preview h6 {&#13;
+    font-size: 13px;&#13;
+}&#13;
+.epiceditor-preview hr {&#13;
+    margin: 0 0 19px;&#13;
+    border: 0;&#13;
+    border-bottom: 1px solid #ccc;&#13;
+}&#13;
+.epiceditor-preview blockquote {&#13;
+    padding: 13px 13px 21px 15px;&#13;
+    margin-bottom: 18px;&#13;
+    font-family:georgia,serif;&#13;
+    font-style: italic;&#13;
+}&#13;
+.epiceditor-preview blockquote:before {&#13;
+    content:"\201C";&#13;
+    font-size:40px;&#13;
+    margin-left:-10px;&#13;
+    font-family:georgia,serif;&#13;
+    color:#eee;&#13;
+}&#13;
+.epiceditor-preview blockquote p {&#13;
+    font-size: 14px;&#13;
+    font-weight: 300;&#13;
+    line-height: 18px;&#13;
+    margin-bottom: 0;&#13;
+    font-style: italic;&#13;
+}&#13;
+.epiceditor-preview code, #epiceditor-preview pre {&#13;
+    font-family: Monaco, Andale Mono, Courier New, monospace;&#13;
+}&#13;
+.epiceditor-preview code {&#13;
+    background-color: #000;&#13;
+    color: #f92672;&#13;
+    padding: 1px 3px;&#13;
+    font-size: 12px;&#13;
+    -webkit-border-radius: 3px;&#13;
+    -moz-border-radius: 3px;&#13;
+    border-radius: 3px;&#13;
+}&#13;
+.epiceditor-preview pre {&#13;
+    display: block;&#13;
+    padding: 14px;&#13;
+    color:#66d9ef;&#13;
+    margin: 0 0 18px;&#13;
+    line-height: 16px;&#13;
+    font-size: 11px;&#13;
+    border: 1px solid #d9d9d9;&#13;
+    white-space: pre-wrap;&#13;
+    word-wrap: break-word;&#13;
+}&#13;
+.epiceditor-preview pre code {&#13;
+    background-color: #000;&#13;
+    color:#ccc;&#13;
+    font-size: 11px;&#13;
+    padding: 0;&#13;
+}</style>
+        <sys_class_name>content_css</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-11 22:38:03</sys_created_on>
+        <sys_id>633337e747e731101958ae4b116d43a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>epic_editor_preview_preview_dark</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>content_css_633337e747e731101958ae4b116d43a9</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-11 22:38:03</sys_updated_on>
+        <type>local</type>
+        <url/>
+    </content_css>
+</record_update>

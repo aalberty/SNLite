@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>epic_editor.js</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-11 21:41:49</sys_created_on>
+        <sys_id>e86623e747a731101958ae4b116d4309</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>epic_editor.js</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_ui_script display_value="EpicEditor">697627ab47a731101958ae4b116d4382</sys_ui_script>
+        <sys_update_name>sp_js_include_e86623e747a731101958ae4b116d4309</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-11 21:45:20</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_css">
+    <content_css action="INSERT_OR_UPDATE">
+        <name>epic_editor_editor_dark</name>
+        <style>html { padding:10px; }&#13;
+&#13;
+body {&#13;
+  border:0;&#13;
+  background:rgb(41,41,41);&#13;
+  font-family:monospace;&#13;
+  font-size:14px;&#13;
+  color:#ddd;&#13;
+  line-height:1.35em;&#13;
+  margin:0;&#13;
+  padding:0;&#13;
+}</style>
+        <sys_class_name>content_css</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-11 22:35:46</sys_created_on>
+        <sys_id>3cc2ffe747e731101958ae4b116d43df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>epic_editor_editor_dark</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>content_css_3cc2ffe747e731101958ae4b116d43df</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-11 22:35:46</sys_updated_on>
+        <type>local</type>
+        <url/>
+    </content_css>
+</record_update>

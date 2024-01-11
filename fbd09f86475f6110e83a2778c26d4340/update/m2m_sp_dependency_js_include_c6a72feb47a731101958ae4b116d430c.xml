@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_dependency display_value="Epic Editor">ec9767eb47a731101958ae4b116d4362</sp_dependency>
+        <sp_js_include display_value="epic_editor.js">e86623e747a731101958ae4b116d4309</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-11 21:47:08</sys_created_on>
+        <sys_id>c6a72feb47a731101958ae4b116d430c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Epic Editor.epic_editor.js</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_c6a72feb47a731101958ae4b116d430c</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-11 21:47:08</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+</record_update>
