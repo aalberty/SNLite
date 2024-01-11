@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application/>
+        <application display_value="SNLite">1f9b522b476331101958ae4b116d43ba</application>
         <assessment/>
         <device_type/>
         <filter/>
@@ -24,7 +24,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6e83a94f472b71101958ae4b116d4307</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>SNLite</sys_name>
         <sys_overrides/>
         <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
@@ -32,7 +32,7 @@
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sys_app_module_6e83a94f472b71101958ae4b116d4307</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2024-01-09 22:57:48</sys_updated_on>
+        <sys_updated_on>2024-01-11 16:15:16</sys_updated_on>
         <timeline_page/>
         <title>SNLite</title>
         <uncancelable>false</uncancelable>
