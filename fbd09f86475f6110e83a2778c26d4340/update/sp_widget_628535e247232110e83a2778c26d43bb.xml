@@ -4,93 +4,35 @@
         <client_script><![CDATA[api.controller = function ($scope) {
   /* widget controller */
   var c = this;
-  c.loadEditor = loadEditor;
-  c.reflowEditor = reflowEditor;
-  c.activeEditor = undefined;
-
-  var opts = {
-    container: "epiceditor",
-    //textarea: "my-edit-area",
-    basePath: '',
-    clientSideStorage: true,
-    localStorageName: 'epiceditor',
-    useNativeFullscreen: true,
-    parser: marked,
-    file: {
-      name: 'epiceditor',
-      defaultContent: '',
-      autoSave: 100
-    },
-    theme: {
-      base: '8aa2772b47e731101958ae4b116d43f0.cssdbx',
-      preview: '633337e747e731101958ae4b116d43a9.cssdbx',
-      editor: '3cc2ffe747e731101958ae4b116d43df.cssdbx'
-    },
-    button: {
-      preview: true,
-      fullscreen: true,
-      bar: "auto"
-    },
-    focusOnLoad: true,
-    shortcut: {
-      modifier: 18,
-      fullscreen: 70,
-      preview: 80
-    },
-    string: {
-      togglePreview: 'Toggle Preview Mode',
-      toggleEdit: 'Toggle Edit Mode',
-      toggleFullscreen: 'Enter Fullscreen'
-    },
-    autogrow: false
-  };
-
-  setTimeout(init, 100);
-
-
-  /*
-  setTimeout(function () {
-    c.editor = new EpicEditor(opts).load(cbLog("onload ran"));
-    console.log("Editor obj: ", c.editor);
-    prismifyEditor();  
-  }, 5000);
-  */
-
-
+  c.rehighlight = rehighlight;
+  
+  window.onload = init;
+  
   function init () {
+    var editor = document.getElementById("editor");
+    editor.contentEditable = true;
+    editor.focus();
     window.Prism.highlightAll();
   }
 
-
-  function loadEditor() {
-    if (c.editor) {
-      c.editor.unload(cbLog("Editor unloaded."));
-      c.editor = undefined;
-    }
-
-    c.editor = new EpicEditor(opts).load(cbLog("Editor loaded."));
+  function rehighlight () {
+    window.Prism.highlightAll();
   }
 
-  function prismifyEditor () {
-    var editorIFrame = document.getElementById("epiceditor-editor-frame");
-    var prismEle = document.createElement('code');
-    prismEle.classList.add('lang-javascript');
-    editorIFrame.contentDocument.children[0].appendChild(prismEle);
-  }
-
-  function reflowEditor() {
-    c.editor.reflow();
-  }
-
-  function cbLog(msg) {
-    console.log(msg);
-  }
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>.epiceditor-editor-dark, .epiceditor-editor-light {&#13;
+        <css>.token.operator {&#13;
+    background: none;&#13;
+}&#13;
+&#13;
+&#13;
+#editor {&#13;
     display: flex;&#13;
-    flex-grow: 1;&#13;
-}</css>
+    width: 100%;&#13;
+    height: 50vh;&#13;
+    resize: both;&#13;
+}&#13;
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -110,47 +52,21 @@
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-06-23 14:43:29</sys_created_on>
         <sys_id>628535e247232110e83a2778c26d43bb</sys_id>
-        <sys_mod_count>95</sys_mod_count>
+        <sys_mod_count>122</sys_mod_count>
         <sys_name>SNLite</sys_name>
         <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sp_widget_628535e247232110e83a2778c26d43bb</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2024-01-12 23:10:16</sys_updated_on>
+        <sys_updated_on>2024-01-13 20:17:24</sys_updated_on>
         <template><![CDATA[&lt;script&gt;
   window.Prism = window.Prism || {};
   window.Prism.manual = true;
 &lt;/script&gt;
 
+<code id="editor" class="language-javascript"></code>
 
-<div>
-  <p>Testing content</p>
-  
-  
-</div>
-
-<button type="button" ng-click="c.loadEditor()">Load Editor</button>
-<button type="button" ng-click="c.reflowEditor()">Reflow</button>
-
-<div id="epiceditor" ng-load="c.loadEditor()">
-  <pre><code class="lang-javascript"></code></pre>
-  <!--<textarea class="epiceditor-editor-dark" id="my-edit-area"></textarea>-->
-</div>
-
-
-<div>
-<p>Testing static code block for prismjs highlighting</p>
-
-<pre><code class="language-javascript">
-  var test = "Thing";
-  function doTheThing () {
-    if (typeof(test) == typeof("")) {
-      console.log(test);
-    }
-  }
-</code></pre>
-
-</div>]]></template>
+<button type="button" ng-click="c.rehighlight()">refresh highlight</button>]]></template>
     </sp_widget>
 </record_update>
