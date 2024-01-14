@@ -5,33 +5,114 @@
   /* widget controller */
   var c = this;
   c.rehighlight = rehighlight;
-  
   window.onload = init;
   
+	addEventListener("keydown", function (e) {
+		console.log(e);
+		if (e && e.key == "Enter") {
+			var userInput = e.target.textContent.substr(0, e.target.textContent.length);
+			writeOut(userInput);
+			e.target.textContent = "";
+		}
+		
+	});
+	
   function init () {
-    var editor = document.getElementById("editor");
-    editor.contentEditable = true;
-    editor.focus();
-    window.Prism.highlightAll();
-  }
+    var userInputElement = document.getElementById("user-input");
+    userInputElement.contentEditable = true;
+    userInputElement.focus();
+    //window.Prism.highlightAll();
+  	addSampleOutput();
+	}
 
   function rehighlight () {
-    window.Prism.highlightAll();
+    //window.Prism.highlightAll();
   }
+	
+	function addSampleOutput () {
+		writeOut("Testing Message");
+	}
 
+	
+	function writeOut (message) {
+		var msg = message || "";
+		var output = document.createElement("span");
+		var textForOutput = "  >  " + msg;
+		output.textContent = textForOutput;
+		output.classList.add("stuck-bottom");
+		document.getElementById("output").appendChild(output);
+	}
+	
+	
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>.token.operator {&#13;
-    background: none;&#13;
-}&#13;
-&#13;
-&#13;
-#editor {&#13;
-    display: flex;&#13;
-    width: 100%;&#13;
-    height: 50vh;&#13;
-    resize: both;&#13;
-}&#13;
+        <css>.window {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    margin: auto;
+  	height: 95vh;
+}
+
+
+.output-pane, .input-pane {
+  display: flex;
+  background-color: #2d2d2d;
+  color: #ccc;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.output-pane {
+  flex-grow: 1;
+  flex-flow: column;
+}
+
+.output-pane &gt; span:first-child {
+	margin-top: auto;
+}
+
+.input-pane {
+  height: 7%;
+  //padding: 10px;
+}
+
+.user-input-indicator, .user-input {
+	display: flex;
+  flex-wrap: wrap;
+	padding: 0;
+  padding-right: 1rem;
+  align-content: center;
+}
+
+.user-input-indicator {
+	width: auto;
+  height: 100%;
+}
+
+.user-input {
+	flex-grow: 1;
+}
+
+.stuck-bottom {
+  position: relative;
+  bottom: 0;
+	margin-bottom: 0;
+  display: inline;
+}
+
+.token.operator {
+    background: none;
+}
+
+
+#editor {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    resize: both;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -52,21 +133,33 @@
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-06-23 14:43:29</sys_created_on>
         <sys_id>628535e247232110e83a2778c26d43bb</sys_id>
-        <sys_mod_count>122</sys_mod_count>
+        <sys_mod_count>198</sys_mod_count>
         <sys_name>SNLite</sys_name>
         <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
         <sys_policy/>
         <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
         <sys_update_name>sp_widget_628535e247232110e83a2778c26d43bb</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2024-01-13 20:17:24</sys_updated_on>
-        <template><![CDATA[&lt;script&gt;
+        <sys_updated_on>2024-01-14 00:12:38</sys_updated_on>
+        <template><![CDATA[<script>
   window.Prism = window.Prism || {};
   window.Prism.manual = true;
-&lt;/script&gt;
+</script>
 
-<code id="editor" class="language-javascript"></code>
 
-<button type="button" ng-click="c.rehighlight()">refresh highlight</button>]]></template>
+<div class="window" id="editor">
+
+  <div class="output-pane" id="output">
+
+  </div>
+
+
+  <div class="input-pane">
+    <i class="user-input-indicator">  >  </i>
+    <div class="user-input" id="user-input"></div>
+  </div>
+
+</div>
+]]></template>
     </sp_widget>
 </record_update>
