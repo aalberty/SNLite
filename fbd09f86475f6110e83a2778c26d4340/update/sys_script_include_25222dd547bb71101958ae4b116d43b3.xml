@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>global.SNLite</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SNLite</name>
+        <script><![CDATA[var SNLite = Class.create();
+SNLite.prototype = {
+    initialize: function () {
+		this.tbl = {
+			displayName: undefined,
+			name: undefined,
+			records: undefined
+		};
+		this.record = {};
+		this.name = undefined;
+	},
+	
+	table: function (tableName) {
+		if (tableName == "" || tableName == undefined) {
+			return this.tableToString();
+		}
+		
+		var gr = new GlideRecord(tableName);
+		this.tbl.name = tableName;
+		this.tbl.displayName = gr.getClassDisplayValue();
+		return;
+	},
+	
+	record: function (identifier) {
+		this.rec = new GlideRecord(this.name);
+		if (!query) {
+			//TODO: return rnd rec
+		}
+		
+		if (query.length == 32) {
+			this.rec.get(identifier);
+		}
+		
+		//TODO: enable ID via alt fields such as number
+		
+		return this.rec;
+	},
+
+	printRec: function (rec) {
+		// Get fields that are displayed by default on the form
+		if (!rec) {
+			return false;
+		}
+		
+		var blueprint = "";
+
+		var tableName = rec.getRecordClassName();
+		var view = "Default view"; 
+		var formGr = new GlideRecord("sys_ui_form");
+		var formSecGr = new GlideRecord("sys_ui_form_section");
+		formGr.addQuery("name", tableName);
+		formGr.addQuery("view", view);
+		formGr.query();
+		if (formGr.next()) {
+			//get sections in order
+			formSecGr.addEncodedQuery("sys_ui_form=" + formGr.getUniqueValue());
+			formSecGr.orderBy("position");
+			formSecGr.query();
+
+			var secGr = new GlideRecord('sys_ui_section');
+			gs.debug("Found " + formSecGr.getRowCount() + " different form sections.");
+
+			while (formSecGr.next()) {
+				if (secGr.get(formSecGr.getValue("sys_ui_section"))) {
+					
+					var eleGr = new GlideRecord('sys_ui_element');
+
+					if (!blueprint == "") {
+						blueprint += "\n";
+					}
+					blueprint += "--- ";
+					blueprint += secGr.getValue("caption") || "";
+					blueprint += " ---";
+					
+					//get ordered eles
+					eleGr.addEncodedQuery("sys_ui_section=" + secGr.getUniqueValue() + "^type=NULL");
+					eleGr.orderBy("position");
+					eleGr.query();
+					
+					while (eleGr.next()) {
+						blueprint += "\n" + eleGr.getValue("element");
+					}
+				}
+			}
+			return blueprint;
+		}
+
+		return false;
+	},
+	
+    type: 'SNLite'
+};
+
+
+
+
+
+
+
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-16 22:38:08</sys_created_on>
+        <sys_id>25222dd547bb71101958ae4b116d43b3</sys_id>
+        <sys_mod_count>43</sys_mod_count>
+        <sys_name>SNLite</sys_name>
+        <sys_package display_value="SNLite" source="fbd09f86475f6110e83a2778c26d4340">fbd09f86475f6110e83a2778c26d4340</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sys_script_include_25222dd547bb71101958ae4b116d43b3</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-17 01:52:54</sys_updated_on>
+    </sys_script_include>
+</record_update>
