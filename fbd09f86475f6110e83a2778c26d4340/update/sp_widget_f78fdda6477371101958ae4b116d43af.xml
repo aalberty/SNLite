@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	c.q = undefined;
+	c.openLink = openLink;
+	
+	init();
+	
+	function init () {
+		var input = {
+			"action": "init"
+		};
+		
+		c.server.get(input).then(function (res) {
+			c.results = res.data.tables;
+		});
+	}
+	
+	function openLink (type, tableName) {
+		var input = {
+			"action": "buildLink",
+			"type": type,
+			"table": tableName
+		};
+		
+		console.log("build url input: ", input); 
+		
+		c.server.get(input).then(function (res) {
+			console.log("build url response: ", res);
+			window.open(res.data.url, "_blank").focus();
+		});
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.link {
+  color: #00f;
+  font-style: normal;
+}
+
+.link:hover {
+	cursor: pointer;
+  font-weight: bolder;
+}
+
+.fixed-size {
+	width: 10rem;
+}
+
+tr {
+	margin-bottom: 1rem;
+}
+
+tr:hover {
+	background-color: lightgrey;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>my-search</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>My Search</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.tables = [];
+	data.url = "";
+	var baseUrl = gs.getProperty("glide.servlet.uri"); // returns https://<instace>.service-now.com/
+	
+	if (input && input.action) {	
+		if (input.action == "init") {
+			var tablesGr = new GlideRecord("sys_db_object");
+			tablesGr.orderBy("label");
+			tablesGr.query();
+
+			while (tablesGr.next()) {
+				data.tables.push({
+					label: tablesGr.getValue("label"),
+					name: tablesGr.getValue("name")
+				});
+			}
+
+			tablesGr.setLocation(0);
+			return data.tables;
+		}
+		
+		if (input.action == "buildLink") {
+			data.url = baseUrl + "now/nav/ui/classic/params/target/";
+			
+			if (input.type == "list") {
+				data.url += input.table + "_list.do";
+				return data.url;
+			}
+			
+			if (input.type == "schema") {
+				var tu = new TableUtils(input.table);
+				var includeTables = tu.getHierarchy();
+				var arr_util = new global.ArrayUtil();
+				var tableArr = arr_util.convertArray(includeTables);
+				var q = "";
+				
+				for (var i = 0; i < tableArr.length; i++){
+					if (q != "") {
+						q += "^OR"
+					}
+					
+					q += "name=" + tableArr[i];
+				}
+				
+				data.url += "sys_dictionary_list.do" + encodeURIComponent("?sysparm_query=" + q);
+				return data.url;
+			}
+			
+		}
+	}
+	
+	
+	
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-20 19:34:39</sys_created_on>
+        <sys_id>f78fdda6477371101958ae4b116d43af</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>My Search</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</sys_scope>
+        <sys_update_name>sp_widget_f78fdda6477371101958ae4b116d43af</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-20 21:41:46</sys_updated_on>
+        <template><![CDATA[<div class="controls">
+	<input type="text" id="search-bar" ng-model="c.q"/>
+</div>
+
+<div class="results">
+  <table>
+  
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th class="fixed-size">List</th>
+      <th class="fixed-size">Schema</th>
+  	</tr>
+    
+    <tr ng-repeat="table in c.results">
+      <td>{{table.label}}</td>
+      <td>{{table.name}}</td>
+      <td class="fixed-size"><i class="link" ng-click="c.openLink('list', table.name)">Record list ➚</i></td>
+      <td class="fixed-size"><i class="link" ng-click="c.openLink('schema', table.name)">Schema view ➚</i></td>
+    </tr>
+  
+</table>
+</div>]]></template>
+    </sp_widget>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="SNLite">fbd09f86475f6110e83a2778c26d4340</claim_owner_scope>
+        <claim_timestamp>18d28d298f50000001</claim_timestamp>
+        <metadata_update_name>sp_widget_f78fdda6477371101958ae4b116d43af</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>SNLite</previous_claim_name>
+        <previous_claim_scope>fbd09f86475f6110e83a2778c26d4340</previous_claim_scope>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2024-01-20 21:41:46</sys_created_on>
+        <sys_id>5fbc392a47f371101958ae4b116d4353</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2024-01-20 21:41:46</sys_updated_on>
+    </sys_claim>
+</record_update>
