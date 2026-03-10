@@ -1,6 +1,7 @@
 import requests as r
 
 # move these to a config file eventually
+# NOTE: both of these should just contain the token; transform handled in _build_options
 ck = None
 jsessionid = None
 
