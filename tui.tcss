@@ -1,0 +1,32 @@
+
+Screen {
+    &:inline {
+        height: 50vh;
+    }
+}
+
+#plain-area {
+    display: none;
+    scrollbar-gutter: stable;
+    overflow: auto;
+    width: auto;
+    height: 100%;
+    dock: left;
+}
+
+SNLite.-show-plain-area #plain-area {
+    display: block;
+    max-width: 50%;
+}
+
+
+#code-area{
+    overflow: auto scroll;
+    min-width: 100%;
+    hatch: right $panel;
+}
+#code {
+    width: auto;
+    padding: 0 1;
+    background: $surface;
+}
